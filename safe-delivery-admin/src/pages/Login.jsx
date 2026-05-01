@@ -60,7 +60,7 @@ export default function Login() {
                 <Mail size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
                 <input
                   type="email"
-                  placeholder="admin@safedelivery.com"
+                  placeholder="admin@gmail.com"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="input pl-10"
