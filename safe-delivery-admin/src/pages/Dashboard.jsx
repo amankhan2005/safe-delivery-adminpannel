@@ -305,19 +305,12 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
-            {[
-              { label: 'Customers', Icon: Users, value: data?.totalInquiries ?? 0, color: '#1B4FD8', bg: '#eff6ff' },
-              { label: 'Drivers',   Icon: Bike,  value: '—',                       color: '#E8212B', bg: '#fff0f0' },
-            ].map(row => (
-              <div key={row.label} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: row.bg, borderRadius: 10, padding: '10px 14px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#374151', fontWeight: 500 }}>
-                  <row.Icon size={13} style={{ color: row.color }} />
-                  {row.label}
-                </div>
-                <span style={{ fontSize: 14, fontWeight: 700, color: row.color }}>{row.value}</span>
-              </div>
-            ))}
+          {/* Total count — big and centred */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
+            <span style={{ fontSize: 48, fontWeight: 700, color: '#111827', fontFamily: 'Sora,sans-serif', lineHeight: 1 }}>
+              {data?.totalInquiries ?? 0}
+            </span>
+            <span style={{ fontSize: 12, color: '#9ca3af', fontWeight: 500 }}>total inquiries received</span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginTop: 14, fontSize: 11, color: '#9ca3af' }}>

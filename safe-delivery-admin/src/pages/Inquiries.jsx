@@ -8,7 +8,7 @@ import Spinner from '../components/Spinner'
 import toast from 'react-hot-toast'
 import { Search, Eye, Phone, Mail, MessageSquare, User, Bike } from 'lucide-react'
 
-const ROLES = ['all', 'customer', 'driver']
+const ROLES = ['all', 'customer', 'rider']
 
 export default function Inquiries() {
   const [inquiries, setInquiries] = useState([])
@@ -84,7 +84,7 @@ export default function Inquiries() {
                 role === r ? 'bg-brand-blue text-white' : 'text-gray-500 hover:bg-gray-50'
               }`}
             >
-              {r === 'all' ? 'All' : r === 'driver' ? '🏍️ Driver' : '📦 Customer'}
+              {r === 'all' ? 'All' : r === 'rider' ? '🏍️ Rider' : '📦 Customer'}
             </button>
           ))}
         </div>
@@ -115,7 +115,7 @@ export default function Inquiries() {
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
-                        inq.role === 'driver'
+                        inq.role === 'rider'
                           ? 'bg-red-100 text-red-600'
                           : 'bg-blue-100 text-brand-blue'
                       }`}>
@@ -130,11 +130,11 @@ export default function Inquiries() {
                   <td className="px-4 py-3 text-sm font-mono text-gray-600">{inq.phone}</td>
                   <td className="px-4 py-3">
                     <span className={`badge ${
-                      inq.role === 'driver'
+                      inq.role === 'rider'
                         ? 'bg-red-100 text-red-600'
                         : 'bg-blue-100 text-brand-blue'
                     }`}>
-                      {inq.role === 'driver' ? '🏍️ Driver' : '📦 Customer'}
+                      {inq.role === 'rider' ? '🏍️ Rider' : '📦 Customer'}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-400 max-w-xs">
@@ -167,7 +167,7 @@ export default function Inquiries() {
             {/* Header */}
             <div className="flex items-center gap-4">
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold ${
-                selected.role === 'driver'
+                selected.role === 'rider'
                   ? 'bg-red-100 text-red-600'
                   : 'bg-blue-100 text-brand-blue'
               }`}>
@@ -178,11 +178,11 @@ export default function Inquiries() {
                   {selected.firstName} {selected.lastName}
                 </h3>
                 <span className={`badge mt-1 ${
-                  selected.role === 'driver'
+                  selected.role === 'rider'
                     ? 'bg-red-100 text-red-600'
                     : 'bg-blue-100 text-brand-blue'
                 }`}>
-                  {selected.role === 'driver' ? '🏍️ Driver' : '📦 Customer'}
+                  {selected.role === 'rider' ? '🏍️ Rider' : '📦 Customer'}
                 </span>
               </div>
               <div className="ml-auto text-right">
